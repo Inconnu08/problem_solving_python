@@ -1,0 +1,7 @@
+include/
+lib/
+Scripts/
+*.cfg
+__pycache__
+.idea/
+
