@@ -17,6 +17,8 @@ class Node:
 
 
 class LinkList:
+    __slots__ = 'head', 'size'
+
     def __init__(self, head=None):
         self.head = head
         self.size = 0
@@ -24,3 +26,22 @@ class LinkList:
     def get_size(self):
         return self.size
 
+    def insert(self, value):
+        self.head = Node(value, self.head)
+        self.size += 1
+
+    def print_list(self):
+        curr = self.head
+        while curr:
+            print(curr.value)
+            curr = curr.get_next()
+
+
+myList = LinkList()
+
+myList.insert(5)
+myList.insert(15)
+myList.insert(25)
+print("Printing")
+myList.print_list()
+print('size', myList.get_size())
